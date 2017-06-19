@@ -1,0 +1,509 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="typed.js"></script>
+    <style>
+    body{
+      margin:0;
+      min-width:500px;
+    }
+    #fullface{
+      width: 100%;
+      height: 100vh;
+    }
+    #facediv{
+      display:inline-flex;
+      justify-content:center;
+      width:100%;
+      margin-top:10%;
+      background-color:#8c79f3;
+    }
+    .purp{
+      background-color:#8c79f3;
+    }
+    .eye{
+      display:inline-block;
+      width:20vh;
+      height:20%;
+      background-color:#ffffff;
+      border-radius:50%;
+      margin:10%;
+    }
+    .pupil{
+      display:inline-block;
+      width:10vh;
+      height:50%;
+      background-color:#000000;
+      border-radius:50%;
+      margin:25%;
+    }
+    .shine{
+      display:inline-block;
+      width:10vh;
+      height:30%;
+      background-color:#ffffff;
+      border-radius:50%;
+      margin-top: -90%;
+      margin-left: 10%;
+    }
+    .shine2{
+      display:inline-block;
+      width:3vh;
+      height:10%;
+      background-color:#ffffff;
+      border-radius:50%;
+      margin-top: -32%;
+      margin-left: 43%;
+    }
+    .sad{
+      width: 7vh;
+      margin-top: -77%;
+      margin-left: 26%;
+    }
+    .sadL{
+      width: 0;
+      height: 0;
+      border-bottom: 2em solid transparent;
+      border-top: 7em solid #8c79f3;
+      border-right: 10em solid transparent;
+      margin-top:-140%;
+    }
+    .sadR{
+      width: 0;
+      height: 0;
+      border-bottom: 2em solid transparent;
+      border-top: 7em solid #8c79f3;
+      border-left: 10em solid transparent;
+      margin-top:-125%;
+    }
+    #text{
+      width:80%;
+      margin-left:auto;
+      margin-right:auto;
+      height:10%;
+      padding-top:10%;
+      text-align:center;
+    }
+    .txt{
+      color:#ffffff;
+      text-decoration: none;
+      font-size:2em;
+    }
+    .txt2{
+      color:#000000;
+      text-decoration: none;
+      font-size:2em;
+    }
+    a:hover{
+      color:cyan;
+    }
+    .hide{
+      display:none !important;
+    }
+    .friend{
+      background-color: #8c79f3;
+      width: 10em;
+      height: 10em;
+      border-radius: 50%;
+      margin-left: 5%;
+      display: inline-flex;
+      justify-content: space-around;
+    }
+    .friendeye{
+      display:inline-block;
+      width:10%;
+      height:10%;
+      padding:10%;
+      background-color:#ffffff;
+      border-radius:50%;
+      margin-top:25%;
+    }
+    .friendpupil{
+      display:inline-block;
+      width: 20%;
+      height: 20%;
+      padding:85%;
+      background-color:#000000;
+      border-radius:50%;
+      margin-left: -40%;
+      margin-top: -50%;
+    }
+    .friendshine{
+      display:inline-block;
+      width: 20%;
+      height: 10%;
+      padding:25%;
+      background-color:#ffffff;
+      border-radius:50%;
+      margin-top: -200%;
+    }
+    @keyframes bounce{
+      0%{
+        transform: translateY(2%);
+      }
+      100%{
+        transform: translateY(0%);
+      }
+    }
+    .bouncy{
+      animation: bounce 2s infinite;
+    }
+    .bouncy2{
+      animation: bounce 1s infinite;
+    }
+    .bouncy3{
+      animation: bounce 3s infinite;
+    }
+    #tube{
+      width: 45%;
+      margin-top: 30%;
+      margin-left: 31%;
+      margin-right: auto;
+    }
+    .tubetop{
+      height: 10%;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      background: linear-gradient(#11d211, #0b6f0b);
+    }
+    .tubetube{
+      height: 31%;
+      width: 60%;
+      margin-left: auto;
+      background: linear-gradient(to right, #11d611, #0b6f0b);
+      margin-right: auto;
+    }
+    @keyframes boop{
+      100%{
+        transform: translateY(200%);
+      }
+    }
+    .boop{
+      animation: boop 2s 1 forwards;
+    }
+    .length{
+      width: 100%;
+      height: 1%;
+      background-color:black;
+      z-index: -1;
+      margin-top: 30%;
+    }
+    @keyframes zoom{
+      100%{
+        transform: translateX(300%);
+      }
+    }
+    .zoom{
+      animation: zoom 2s 1 forwards;
+    }
+    @keyframes whee{
+      0%{
+        transform: translateX(300%);
+      }
+      100%{
+        transform: translateX(600%);
+      }
+    }
+    .whee{
+      animation: whee 2s 1 forwards;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="fullface" class="purp">
+      <div id="text" class="txt">
+      </div>
+      <div id="facediv">
+        <div class="eye">
+          <div class="pupil">
+          </div>
+          <div class="shine">
+          </div>
+          <div class="shine2">
+          </div>
+          <div class="sadL hide">
+          </div>
+        </div>
+        <div class="eye">
+          <div class="pupil">
+          </div>
+          <div class="shine">
+          </div>
+          <div class="shine2">
+          </div>
+          <div class="sadR hide">
+          </div>
+        </div>
+      </div>
+      <div id="friends">
+        <div class="friend bouncy2 hide" style="position:absolute;top:40%;left:10%;">
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+        </div>
+        <div class="friend bouncy3 hide" style="position:absolute;top:55%;left:26%;">
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+        </div>
+        <div class="friend bouncy hide" style="position:absolute;top:40%;left:10%;">
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+        </div>
+        <div class="friend bouncy2 hide" style="position:absolute;top:25%;left:39%;">
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+        </div>
+        <div class="friend bouncy3 hide" style="position:absolute;top:60%;left:50%;">
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+        </div>
+        <div class="friend bouncy hide" style="position:absolute;top:45%;left:62%;">
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+        </div>
+        <div class="friend bouncy hide" style="position:absolute;top:70%;">
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tubefriend" class="hide">
+        <div class="friend bouncy2" style="position:absolute;top:25%;left:39%;z-index:-1;">
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+        </div>
+        <div id="tube" class="hide">
+          <div class="tubetop">
+          </div>
+          <div class="tubetube">
+          </div>
+        </div>
+      </div>
+      <div id="wire" class="hide">
+        <div class="length">
+        </div>
+        <div class="friend" style="margin-left:-20%;margin-top:-10%;">
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+          <div class="friendeye">
+            <div class="friendpupil">
+            </div>
+            <div class="friendshine">
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+  <script>
+  $(document).ready( function(){
+    $(function(){
+      $("#text").typed({
+        strings: ["Hi. I'm a website.", "Do you want to learn how I got here on your computer?<br><a id='y' href='#' class='txt'>Yes</a><a id='n' href='#' class='txt' style='margin-left:20%;'>No</a>"],
+        fadeOut: true,
+        typeSpeed: 20,
+        callback: function(){
+          screen2();
+        }
+      });
+    });
+  });
+  screen2 = function(){
+    $("#y").on("click", function(){
+      screen4();
+    });
+    $("#n").on("click", function(){
+      $(".sadR").removeClass("hide");
+      $(".sadL").removeClass("hide");
+      $(".shine").addClass("sad");
+      $(function(){
+        $("#text").typed({
+          strings: ["Ok.<br><a id='y' href='#' class='txt'>Actually yes</a>"],
+          fadeOut: true,
+          typeSpeed: 20,
+          callback:function(){
+            screen3();
+          }
+        });
+      });
+    });
+  }
+  screen3 = function(){
+    $("#y").on("click", function(){
+            screen4();
+        });
+  }
+  screen4 = function(){
+    $("#text").removeClass("txt");
+    $("#text").addClass("txt2");
+    $("#facediv").addClass("hide");
+    $("#fullface").removeClass("purp");
+    $(".friend").removeClass("hide");
+    $(function(){
+      $("#text").typed({
+        strings: ["I usually live on a github server with all of my friends"],
+        fadeOut: true,
+        typeSpeed: 20,
+        callback: function(){
+          setTimeout(function(){
+            screen5();
+          }, 3000);
+        }
+      });
+    });
+  }
+  screen5 = function(){
+    $("#tubefriend").removeClass("hide");
+    $("#friends").addClass("hide");
+    $(function(){
+      $("#text").typed({
+        strings: ["until one of us is requested to travel on the Internet."],
+        fadeOut: true,
+        typeSpeed: 20,
+        callback: function(){
+          setTimeout(function(){
+            screen6();
+          }, 3000);
+        }
+      });
+    });
+  }
+  screen6 = function(){
+    $("#tube").removeClass("hide");
+    $(function(){
+      $("#text").typed({
+        strings: ["Someone once said the Internet is a series of tubes"],
+        fadeOut: true,
+        typeSpeed: 20,
+        callback: function(){
+          tube();
+        }
+      });
+    });
+  }
+  tube = function(){
+    setTimeout(function(){
+      downTube();
+    }, 1000);
+  }
+  downTube = function(){
+    $(".friend").removeClass("bouncy");
+    $(".friend").addClass("boop");
+    setTimeout(function(){
+      screen7();
+    }, 2000);
+  }
+  screen7 = function(){
+    $(".friend").removeClass("boop");
+    $("#tubefriend").addClass("hide");
+    $("#wire").removeClass("hide");
+    $("#text").typed({
+      strings: ["But it's actually a network of wires"],
+      fadeOut: true,
+      typeSpeed: 20,
+      callback: function(){
+        zip();
+      }
+    });
+  }
+  zip = function(){
+    $(".friend").addClass("zoom");
+    setTimeout(function(){
+      screen8();
+    }, 2000);
+  }
+  screen8 = function(){
+    $("#text").typed({
+      strings: ["Mostly underwater"],
+      fadeOut: true,
+      typeSpeed: 20,
+      callback: function(){
+        $(".friend").addClass("whee");
+      }
+    });
+  }
+  </script>
+</html>
