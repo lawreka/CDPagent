@@ -236,3 +236,65 @@ a:hover{
 .zip{
   animation: zip 5s 1 forwards;
 }
+#packet{
+  position: fixed;
+  top: 48%;
+  left: 50%;
+}
+@keyframes bigger{
+  100%{
+    transform: scale(10);
+  }
+}
+.bigger{
+  animation: bigger 5s 1 forwards;
+}
+#packettext{
+  width: 60%;
+  margin-left: 10%;
+  font-size: 2px;
+}
+.halflength{
+  width: 50%;
+  height: 1%;
+  background-color:black;
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+}
+@keyframes gohalf{
+  100%{
+    transform: translateX(1300%);
+  }
+}
+.gohalf{
+  animation: gohalf 2s 1 forwards;
+}
+.packet2{
+  width:1.5em;
+  height:1.5em;
+  background-color: #8c79f3;
+  display:inline;
+  position:absolute;
+  top:48%;
+}
+.packet3{
+  width:1.5em;
+  height:1.5em;
+  background-color: #8c79f3;
+  display:inline;
+  position:absolute;
+  top:48%;
+}
+.typed-cursor{
+  display:none;
+}
+.friend2{
+  background-color: #8c79f3;
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  margin-left: 5%;
+  display: inline-flex;
+  justify-content: space-around;
+}
