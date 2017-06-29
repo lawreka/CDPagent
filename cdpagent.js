@@ -237,6 +237,8 @@ screen13 = function(){
   $("#fullface").addClass("purp");
   $("#text").removeClass("txt2");
   $("#text").addClass("txt");
+  $(".sadR").addClass("hide");
+  $(".sadL").addClass("hide");
   $(function(){
     $("#text").typed({
       strings: ["Any questions?"],
